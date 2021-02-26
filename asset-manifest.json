@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/homegametracker.github.io/static/css/main.bc753a04.chunk.css",
+    "main.js": "/homegametracker.github.io/static/js/main.30c63ca1.chunk.js",
+    "main.js.map": "/homegametracker.github.io/static/js/main.30c63ca1.chunk.js.map",
+    "runtime-main.js": "/homegametracker.github.io/static/js/runtime-main.b6b981e1.js",
+    "runtime-main.js.map": "/homegametracker.github.io/static/js/runtime-main.b6b981e1.js.map",
+    "static/js/2.f5f7ae97.chunk.js": "/homegametracker.github.io/static/js/2.f5f7ae97.chunk.js",
+    "static/js/2.f5f7ae97.chunk.js.map": "/homegametracker.github.io/static/js/2.f5f7ae97.chunk.js.map",
+    "index.html": "/homegametracker.github.io/index.html",
+    "static/css/main.bc753a04.chunk.css.map": "/homegametracker.github.io/static/css/main.bc753a04.chunk.css.map",
+    "static/js/2.f5f7ae97.chunk.js.LICENSE.txt": "/homegametracker.github.io/static/js/2.f5f7ae97.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b6b981e1.js",
+    "static/js/2.f5f7ae97.chunk.js",
+    "static/css/main.bc753a04.chunk.css",
+    "static/js/main.30c63ca1.chunk.js"
+  ]
+}
