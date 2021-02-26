@@ -1,0 +1,23 @@
+a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.Navigation {
+    display: flex;
+    justify-content: space-between;
+    background-color: darkgray;
+
+}
+
+.Logo {
+    margin-left:30px;
+}
+.Menu {
+    margin-right: 30px;
+    display: flex;
+    gap: 30px;
+    justify-content: space-evenly;
+}
+
+

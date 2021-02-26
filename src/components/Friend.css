@@ -1,0 +1,24 @@
+
+.Friend {
+    display: flex;
+    flex-flow: column wrap;
+    width:250px;
+}
+section img {
+    width: 250px;
+    height:200px;
+    object-fit: cover;
+}
+
+section.Friend h2:first-of-type {
+    margin-bottom: 2px;
+}
+section.Friend h3:first-of-type {
+    margin-bottom: 2px;
+    margin-top:0px;
+}
+
+.UpdatePlayerButton button {
+    width: 100%;
+}
+

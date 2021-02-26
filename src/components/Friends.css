@@ -1,0 +1,9 @@
+.FriendsManageHeader  {
+    text-align: center;
+}
+
+.FriendsEdit {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+}

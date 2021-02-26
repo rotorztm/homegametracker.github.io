@@ -1,0 +1,14 @@
+.Game {
+    display: flex;
+    flex-flow:column wrap;
+    width:350px;
+
+}
+
+.ImageGame {
+    object-fit: cover;
+}
+
+.UpdateGameButton{
+    width: 100%;
+}

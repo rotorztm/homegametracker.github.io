@@ -1,0 +1,8 @@
+.GamesHeader {
+    text-align: center;
+}
+
+.Games {
+    display: flex;
+    justify-content: space-around;
+}
