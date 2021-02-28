@@ -18,6 +18,7 @@ function App() {
   const [mode, setMode] = useState("list");
   const [places, setDataPlaces] = useState(dataPlaces);
 
+  /* Manage games CRUD*/
   const UpdateGames = (game, action) => {
     console.log("Action", action, game, games);
     let newGamesArray = undefined;
@@ -56,6 +57,7 @@ function App() {
           newGamesArray.splice(index, 1);
           setGames([...newGamesArray]);
         }
+        /* TODO: Correct Delete bad behavior games not rendered correctly after setState */
         break;
       default:
         break;
@@ -63,11 +65,11 @@ function App() {
 
 
   }
+  /* Manage friends CRUD*/
 
   const UpdateFriends = (friend, action) => {
-    console.log("Action", action);
-
     let newFriendsArray = undefined;
+
     switch (action) {
       case "update":
         newFriendsArray = friends.map(friendArrayElt => {
@@ -79,19 +81,17 @@ function App() {
         setFriends([...newFriendsArray]);
         break;
       case "delete":
-        console.log("Ami à supprimer", friend);
+
         newFriendsArray = [...friends];
         var index = friends.findIndex(function (o) {
           return o.id === friend.id;
 
         })
         if (index !== -1) {
-          console.log("Delete", index);
           newFriendsArray.splice(index, 1);
-          console.log("tableau après splice", newFriendsArray)
           setFriends(newFriendsArray);
-          console.log("Tableau final", [...newFriendsArray]);
         }
+        /* TODO: Correct Delete bad behavior friends not rendered correctly after setState */
         break;
       case "add":
         let newId = 1;
@@ -105,14 +105,13 @@ function App() {
         newFriendsArray = [...friends];
         newFriendsArray.push(newFriend);
         setFriends([...newFriendsArray]);
-        console.log("friends", newFriendsArray)
         break;
       default:
         break;
     }
 
   }
-
+  /* Made the choice to use switch to render route to manage edit mode */
   const renderRoute = () => {
     switch (route) {
       case "home":

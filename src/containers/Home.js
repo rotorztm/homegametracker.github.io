@@ -4,6 +4,7 @@ import Friends from '../components/Friends';
 import Partys from '../components/Partys';
 
 function Home({ friends, games, partys }) {
+    /* Summary of the last partys // Carousel?  */
     return (
         <div className="Home">
             <h1>Last partys</h1>
@@ -12,9 +13,7 @@ function Home({ friends, games, partys }) {
                 <div className="HomeFriends">
                     <Friends friends={friends} mode="list" />
                 </div>
-
             </div>
-
         </div>
     )
 }

@@ -8,7 +8,6 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import { Button } from '@material-ui/core';
 import CardActions from '@material-ui/core/CardActions';
-import DeleteIcon from '@material-ui/icons/Delete';
 import SaveIcon from '@material-ui/icons/Save';
 
 const useStyles = makeStyles((theme) => ({
@@ -50,51 +49,12 @@ function Friend({ friend, index, mode, UpdateFriends }) {
 
     const [updatedFriend, SetUpdatedFriend] = useState(friend);
     const classes = useStyles();
-    const theme = useTheme();
 
     const renderFriendByMode = () => {
         switch (mode) {
             case "edit":
+                /* Player card in edit mode in the friend page */
                 return (
-                    // <React.Fragment>
-                    //     <section className="Friend">
-                    //         <div>
-                    //             <label>
-                    //                 Name
-                    //         </label>
-                    //             <input onChange={(e) => {
-                    //                 let updateFriend = { ...updatedFriend };
-                    //                 updateFriend.name = e.target.value;
-                    //                 SetUpdatedFriend(updateFriend);
-                    //             }} type="text" defaultValue={updatedFriend.name} />
-
-                    //         </div>
-                    //         <div>
-                    //             <label>
-                    //                 Total score: {updatedFriend.points}
-                    //             </label>
-                    //         </div>
-                    //         <div>
-                    //             <label>
-                    //                 Image Url
-                    //         </label>
-                    //             <input onChange={(e) => {
-                    //                 let updateFriend = { ...updatedFriend };
-                    //                 updateFriend.imageUrl = e.target.value;
-                    //                 SetUpdatedFriend(updateFriend);
-                    //             }} type="text" defaultValue={updatedFriend.imageUrl} />
-                    //             <img src={updatedFriend.imageUrl} alt='#' />
-                    //         </div>
-                    //         <div className="UpdatePlayerButton">
-                    //             <button onClick={() => {
-                    //                 UpdateFriends(updatedFriend)
-                    //             }}>Update player</button>
-                    //         </div>
-
-                    //     </section>
-                    // </React.Fragment>
-
-
                     <Card className={classes.rootFriendsEdit} key={updatedFriend.id}>
                         <div className={classes.friendsEdit}>
                             <div className={classes.friendsEditDetails}>
@@ -164,6 +124,7 @@ function Friend({ friend, index, mode, UpdateFriends }) {
                 )
 
             default:
+                /* Player card in home page */
                 return (
                     <Card className={classes.root}>
                         <div className={classes.details}>

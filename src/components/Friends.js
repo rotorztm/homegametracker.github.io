@@ -13,12 +13,13 @@ function Friends({ friends, mode, UpdateFriends }) {
 
     const renderFriendsByMode = () => {
         switch (mode) {
+            /* Friends in edit mode in the friend page */
             case "edit":
                 return (
                     <React.Fragment>
                         <Typography className="GamesHeader" variant="h3" component="h3" gutterBottom>
                             Manage your friends
-        </Typography>
+                        </Typography>
                         <div className="FriendsEditRoot">
                             <div className="FriendsAction">
                                 <Fab onClick={() => {
@@ -42,6 +43,7 @@ function Friends({ friends, mode, UpdateFriends }) {
 
                 )
             default:
+                /* Friends in static mode in the homepage */
                 return (
                     <div className="Friends">
                         <h2 className="FriendsRankHeader">Ranking</h2>
@@ -54,7 +56,6 @@ function Friends({ friends, mode, UpdateFriends }) {
                         }
                     </div>
                 )
-                break;
         }
     }
 

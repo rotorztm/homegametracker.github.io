@@ -48,6 +48,7 @@ export const dataFriends = [
     }
 ];
 /* Fake partys */
+
 export const dataPartys = [
     {
         partyId: 1,
