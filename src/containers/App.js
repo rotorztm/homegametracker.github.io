@@ -4,104 +4,10 @@ import Navigation from '../components/Navigation';
 import Home from './Home';
 import Friends from '../components/Friends';
 import Games from '../components/Games';
+import { dataGames, dataPartys, dataFriends, dataPlaces } from '../Data/Data.js'
 
 /*Initializing fake data // Not connected to a backend for now each time the app end data lost */
-const dataFriends = [
-  {
-    name: 'Jean',
-    pseudo: 'Jeannot',
-    points: 10,
-    imageUrl: 'https://cdn.pixabay.com/photo/2021/01/21/16/17/english-cocker-spaniel-5937757_960_720.jpg'
-  },
-  {
-    name: 'Julie',
-    pseudo: 'Julyyy',
-    points: 50,
-    imageUrl: 'https://media.istockphoto.com/photos/conference-call-picture-id1249750732?s=612x612'
-  },
-  {
-    name: 'Romain',
-    pseudo: 'Rotor',
-    points: 50,
-    imageUrl: 'https://media.istockphoto.com/photos/crazy-guys-at-pub-drinking-beer-and-taking-selfie-picture-id871440942?s=612x612'
-  },
-  {
-    name: 'Adeline',
-    pseudo: 'Boulla',
-    points: 150,
-    imageUrl: 'https://media.istockphoto.com/photos/smiling-european-woman-holding-video-call-at-home-picture-id1279977965?s=612x612'
-  }
-];
-/* Fake partys */
-const dataPartys = [
-  {
-    players: [
-      {
-        name: 'Jean',
-        points: 10
-      },
-      {
-        name: 'Julie',
-        points: 50
-      }
-    ],
-    game: {
-      name: 'Scrabble',
-      imageUrl: 'https://www.montres-de-luxe.com/photo/art/default/44254703-36237167.jpg?v=1585622136'
 
-    },
-    date: new Date('December 17, 1995 03:24:00')
-  },
-  {
-    players: [
-      {
-        name: 'Jean',
-        points: 10
-      },
-      {
-        name: 'Julie',
-        points: 50
-      }
-    ],
-    game: {
-      name: 'Poker',
-      imageUrl: 'https://img.huffingtonpost.com/asset/5c933ee32a0000ba024e69bc.jpeg?ops=scalefit_720_noupscale&format=webp'
-
-    },
-    date: new Date('December 20, 2020 03:24:00')
-  },
-  {
-    players: [
-      {
-        name: 'Rotor',
-        points: 40
-      },
-      {
-        name: 'Boulla',
-        points: 150
-      }
-    ],
-    game: {
-      name: 'Blind test',
-      imageUrl: 'https://cibul.s3.amazonaws.com/c4efc99789a44ee1bd3243d04fd3307b.base.image.jpg'
-
-    },
-    date: new Date('December 25, 2020 03:24:00')
-  }
-]
-/* Fake games // List of games available to play */
-const dataGames = [
-  {
-    id: 1,
-    name: 'Blind test',
-    imageUrl: 'https://cibul.s3.amazonaws.com/c4efc99789a44ee1bd3243d04fd3307b.base.image.jpg'
-  },
-  {
-    id: 2,
-    name: 'Poker',
-    imageUrl: 'https://img.huffingtonpost.com/asset/5c933ee32a0000ba024e69bc.jpeg?ops=scalefit_720_noupscale&format=webp'
-  }
-]
 
 function App() {
 
@@ -110,11 +16,106 @@ function App() {
   const [games, setGames] = useState(dataGames);
   const [partys, setPartys] = useState(dataPartys);
   const [mode, setMode] = useState("list");
+  const [places, setDataPlaces] = useState(dataPlaces);
+
+  const UpdateGames = (game, action) => {
+    console.log("Action", action, game, games);
+    let newGamesArray = undefined;
+    switch (action) {
+      case "add":
+        let newId = 1;
+        if (games.length > 0) {
+          newId = Math.max.apply(Math, games.map(function (o) { return o.id; })) + 1;
+        }
+
+        let newGame = {
+          id: newId,
+          timedRound: false
+        }
+        newGamesArray = [...games];
+        newGamesArray.push(newGame);
+        setGames([...newGamesArray]);
+        break;
+      case "update":
+        newGamesArray = games.map(gameArrayElt => {
+          if (gameArrayElt.id === game.id) {
+            return game;
+          }
+          return gameArrayElt
+        })
+        console.log("update array", newGamesArray)
+        setGames([...newGamesArray]);
+        break;
+      case "delete":
+
+        newGamesArray = [...games];
+        var index = games.findIndex(function (o) {
+          return o.id === game.id;
+        })
+        if (index !== -1) {
+          newGamesArray.splice(index, 1);
+          setGames([...newGamesArray]);
+        }
+        break;
+      default:
+        break;
+    }
+
+
+  }
+
+  const UpdateFriends = (friend, action) => {
+    console.log("Action", action);
+
+    let newFriendsArray = undefined;
+    switch (action) {
+      case "update":
+        newFriendsArray = friends.map(friendArrayElt => {
+          if (friendArrayElt.id === friend.id) {
+            return friend;
+          }
+          return friendArrayElt
+        })
+        setFriends([...newFriendsArray]);
+        break;
+      case "delete":
+        console.log("Ami à supprimer", friend);
+        newFriendsArray = [...friends];
+        var index = friends.findIndex(function (o) {
+          return o.id === friend.id;
+
+        })
+        if (index !== -1) {
+          console.log("Delete", index);
+          newFriendsArray.splice(index, 1);
+          console.log("tableau après splice", newFriendsArray)
+          setFriends(newFriendsArray);
+          console.log("Tableau final", [...newFriendsArray]);
+        }
+        break;
+      case "add":
+        let newId = 1;
+        if (friends.length > 0) {
+          newId = Math.max.apply(Math, friends.map(function (o) { return o.id; })) + 1;
+        }
+        let newFriend = {
+          id: newId
+
+        }
+        newFriendsArray = [...friends];
+        newFriendsArray.push(newFriend);
+        setFriends([...newFriendsArray]);
+        console.log("friends", newFriendsArray)
+        break;
+      default:
+        break;
+    }
+
+  }
 
   const renderRoute = () => {
     switch (route) {
       case "home":
-
         return (
           <React.Fragment>
             <Home friends={friends} games={games} partys={partys} />
@@ -123,13 +124,13 @@ function App() {
       case "friends":
         return (
           <React.Fragment>
-            <Friends friends={friends} mode={mode} />
+            <Friends friends={friends} mode={mode} UpdateFriends={UpdateFriends} />
           </React.Fragment>
         )
       case "games":
         return (
           <React.Fragment>
-            <Games games={games} />
+            <Games games={games} UpdateGames={UpdateGames} />
           </React.Fragment>
         )
       default:

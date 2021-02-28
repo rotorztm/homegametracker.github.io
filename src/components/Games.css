@@ -4,5 +4,15 @@
 
 .Games {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap:30px;
+}
+.GameAction {
+    display: flex;
+}
+
+.Action {
+    margin-left:50px;
+    margin-bottom: 50px;;
 }

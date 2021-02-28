@@ -6,10 +6,13 @@ import Partys from '../components/Partys';
 function Home({ friends, games, partys }) {
     return (
         <div className="Home">
-            <h1>Welcome home</h1>
+            <h1>Last partys</h1>
             <div className="HomeContent">
-                <Partys partys={partys} />
-                <Friends friends={friends} mode="list" />
+                <Partys partys={partys} games={games} />
+                <div className="HomeFriends">
+                    <Friends friends={friends} mode="list" />
+                </div>
+
             </div>
 
         </div>

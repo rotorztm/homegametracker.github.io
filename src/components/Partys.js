@@ -2,10 +2,10 @@ import React from 'react';
 import Party from './Party';
 import './Partys.css';
 
-const Partys = ({ partys }) => {
+const Partys = ({ partys, games }) => {
     /* Filter partys by date descending */
     const sortedPartys = partys.sort((a, b) => {
-        return (new Date(b.date) - new Date(a.date))
+        return (new Date(b.startDate) - new Date(a.startDate))
     })
 
     return (
@@ -13,7 +13,7 @@ const Partys = ({ partys }) => {
             {
                 sortedPartys.map(party => {
                     return (
-                        <Party party={party} />
+                        <Party party={party} games={games} />
                     )
                 })
             }

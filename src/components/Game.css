@@ -1,14 +1,53 @@
 .Game {
     display: flex;
     flex-flow:column wrap;
-    width:350px;
+    width:400px;
+    gap: 10px;
 
 }
 
+.GameCardHeader {
+    display:flex ;
+    gap:5px;
+}
+
+
+.GameCardBody {
+    display: flex;
+    gap:10px;
+}
+.GameTime{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+}
+.GameCardParticipation {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    flex-grow: 1;
+    gap:10px;
+}
+
+
 .ImageGame {
     object-fit: cover;
+    width: 150px;
+   
+}
+
+.GameDescription {
+    display: flex;
+    flex-flow:column wrap;
+    gap:10px;   
+    flex-grow: 1;
 }
 
 .UpdateGameButton{
     width: 100%;
+}
+
+.GameAction {
+    display: flex;
+    gap:10px;
 }
