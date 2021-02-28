@@ -1,20 +1,24 @@
 {
   "files": {
-    "main.css": "/homegametracker.github.io/static/css/main.bc753a04.chunk.css",
-    "main.js": "/homegametracker.github.io/static/js/main.30c63ca1.chunk.js",
-    "main.js.map": "/homegametracker.github.io/static/js/main.30c63ca1.chunk.js.map",
+    "main.css": "/homegametracker.github.io/static/css/main.255b5b7b.chunk.css",
+    "main.js": "/homegametracker.github.io/static/js/main.a037d2b8.chunk.js",
+    "main.js.map": "/homegametracker.github.io/static/js/main.a037d2b8.chunk.js.map",
     "runtime-main.js": "/homegametracker.github.io/static/js/runtime-main.b6b981e1.js",
     "runtime-main.js.map": "/homegametracker.github.io/static/js/runtime-main.b6b981e1.js.map",
-    "static/js/2.f5f7ae97.chunk.js": "/homegametracker.github.io/static/js/2.f5f7ae97.chunk.js",
-    "static/js/2.f5f7ae97.chunk.js.map": "/homegametracker.github.io/static/js/2.f5f7ae97.chunk.js.map",
+    "static/css/2.746bec79.chunk.css": "/homegametracker.github.io/static/css/2.746bec79.chunk.css",
+    "static/js/2.ce507fef.chunk.js": "/homegametracker.github.io/static/js/2.ce507fef.chunk.js",
+    "static/js/2.ce507fef.chunk.js.map": "/homegametracker.github.io/static/js/2.ce507fef.chunk.js.map",
     "index.html": "/homegametracker.github.io/index.html",
-    "static/css/main.bc753a04.chunk.css.map": "/homegametracker.github.io/static/css/main.bc753a04.chunk.css.map",
-    "static/js/2.f5f7ae97.chunk.js.LICENSE.txt": "/homegametracker.github.io/static/js/2.f5f7ae97.chunk.js.LICENSE.txt"
+    "static/css/2.746bec79.chunk.css.map": "/homegametracker.github.io/static/css/2.746bec79.chunk.css.map",
+    "static/css/main.255b5b7b.chunk.css.map": "/homegametracker.github.io/static/css/main.255b5b7b.chunk.css.map",
+    "static/js/2.ce507fef.chunk.js.LICENSE.txt": "/homegametracker.github.io/static/js/2.ce507fef.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/homegametracker.github.io/static/media/roboto-vietnamese-400-normal.52cebac0.woff2"
   },
   "entrypoints": [
     "static/js/runtime-main.b6b981e1.js",
-    "static/js/2.f5f7ae97.chunk.js",
-    "static/css/main.bc753a04.chunk.css",
-    "static/js/main.30c63ca1.chunk.js"
+    "static/css/2.746bec79.chunk.css",
+    "static/js/2.ce507fef.chunk.js",
+    "static/css/main.255b5b7b.chunk.css",
+    "static/js/main.a037d2b8.chunk.js"
   ]
 }
